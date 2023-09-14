@@ -1,0 +1,59 @@
+/*-- scss:defaults --*/
+
+
+// Define variables for colors and fonts
+$pearly-white: #F5F5F5; //primary background color
+$misty-rose: #FFE4E1; // this can be an alternative background color
+$pale-violet-red: #db7093; //this is the text color for alternative background
+$hot-pink: #FF69B4;
+$deep-pink: #FF1493;
+$light-pink: #FFB6C1;
+$pink: #FFC0CB;
+$peach-puff: #FFDAB9;
+$lighter-pink: #FFDAE9;
+$font-family-barbie: 'Brush Script MT', cursive;
+$font-family-normal: 'Georgia';
+
+/*-- scss:rules --*/
+
+// Pearly White Background
+body {
+  background-image: url("barbielogo-png.png");
+  background-size: 70px 90px;
+  background-repeat: no-repeat;
+  background-position: 7% 1%;
+  //background-color: $pearly-white; //primary background
+  background-color: $misty-rose;
+  font-family: $font-family-barbie;
+  color: $pink; // Hot Pink for general text
+}
+
+// Different Shades of Pink for Headings
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-barbie;
+
+  &.h1 { color: $deep-pink; font-size: 36px; }
+  &.h2 { color: $hot-pink; font-size: 32px; }
+  &.h3 { color: $light-pink; font-size: 28px; }
+  &.h4 { color: $lighter-pink; font-size: 24px; }
+  &.h5 { color: $peach-puff; font-size: 20px; }
+}
+
+// Barbie Themed Font for Text
+p {
+  font-family: $font-family-normal;
+  //color: $pink;
+  color: $pale-violet-red;
+  font-size: 18px;
+}
+
+
+/*-- scss:mixins --*/
+// No mixins used in this example, but you can add them here if needed
+
+/*-- scss:functions --*/
+// No functions used in this example, but you can add them here if needed
+
+/*-- scss:uses --*/
+
+// Additional styles can be added below

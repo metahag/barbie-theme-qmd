@@ -1,0 +1,93 @@
+---
+title: "Barbie Template"
+author: "Name Surname"
+format:
+  html:
+    theme: barbie-theme.scss
+execute: 
+  echo: false
+  warning: false
+  error: false
+bibliography: references.bib
+---
+
+```{r, global-setup}
+#remotes::install_github("MatthewBJane/theme_park") # install the themepark once and then call themes using "ThemePark::"
+library(apaTables)
+library(psych)
+library(tidyverse)
+```
+
+# Introduction
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci a scelerisque purus semper. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Diam sit amet nisl suscipit adipiscing bibendum. Amet est placerat in egestas erat imperdiet sed. Enim sit amet venenatis urna cursus. Turpis in eu mi bibendum. Enim ut tellus elementum sagittis vitae. Ut enim blandit volutpat maecenas volutpat blandit aliquam. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Consequat semper viverra nam libero justo. Etiam non quam lacus suspendisse. Ut ornare lectus sit amet. Quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Adipiscing at in tellus integer feugiat scelerisque varius morbi. Facilisis gravida neque convallis a cras semper auctor neque vitae. Tellus mauris a diam maecenas sed enim ut sem. Sed viverra tellus in hac habitasse. Orci dapibus ultrices in iaculis nunc sed. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit lectus.
+
+Quam elementum pulvinar etiam non quam lacus. Dictum at tempor commodo ullamcorper a. Pretium nibh ipsum consequat nisl vel. Tincidunt ornare massa eget egestas purus. Viverra suspendisse potenti nullam ac tortor vitae purus. Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Id interdum velit laoreet id donec ultrices tincidunt arcu non. Sapien nec sagittis aliquam malesuada bibendum arcu. Massa id neque aliquam vestibulum morbi blandit cursus risus at. Integer vitae justo eget magna fermentum iaculis. Augue interdum velit euismod in pellentesque. Vel pharetra vel turpis nunc eget lorem dolor sed. Sociis natoque penatibus et magnis. Eu sem integer vitae justo eget magna fermentum iaculis eu. Donec ac odio tempor orci dapibus ultrices. Id aliquet lectus proin nibh nisl. Quisque egestas diam in arcu cursus.
+
+# Methods
+## Research Questions and Hypotheses
+
+::: {}
+1. This is the first research question
+2. Thus is the second research question
+:::
+
+## Procedure
+Nunc pulvinar sapien et *ligula ullamcorper malesuada*. Consectetur lorem donec massa sapien faucibus. Augue ut lectus arcu bibendum at varius vel. At quis risus sed vulputate odio. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Sit amet luctus venenatis lectus magna. **Consectetur purus ut faucibus pulvinar elementum**. Adipiscing commodo elit at imperdiet dui accumsan sit amet nulla. Fermentum dui faucibus in ornare quam viverra orci. Placerat in egestas erat imperdiet. Dictum fusce ut placerat orci nulla pellentesque. Commodo elit at imperdiet dui accumsan. Posuere ac ut consequat semper viverra nam libero. Tortor vitae purus faucibus ornare suspendisse. Porta non pulvinar neque laoreet suspendisse interdum consectetur. Elit pellentesque habitant morbi tristique.
+
+Eu sem integer vitae justo eget magna fermentum iaculis. Morbi tristique senectus et netus et malesuada fames ac turpis. Sed risus ultricies tristique nulla aliquet enim tortor at auctor. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Et pharetra pharetra massa massa ultricies mi. Sed egestas egestas fringilla phasellus faucibus. Blandit massa enim nec dui nunc. Nunc id cursus metus aliquam. Blandit libero volutpat sed cras ornare arcu dui. Egestas erat imperdiet sed euismod nisi porta lorem mollis aliquam. [@JaneBarbie2023]
+
+display math:
+
+$$E = mc^{2}$$
+
+# Results
+
+# Figure 1
+```{r, quarto-example-plots}
+#| column: screen-inset-shaded
+#| layout-nrow: 1
+
+#plot 1
+ggplot2::ggplot(aes(x = cars$speed, y=cars$dist), data = cars) +
+  geom_point(color = ThemePark::barbie_theme_colors["light"]) +
+  geom_smooth(method = "lm",
+              color = ThemePark::barbie_theme_colors["dark"],
+              fill = ThemePark::barbie_theme_colors["light"]) +
+  ThemePark::theme_barbie()
+
+# plot 2
+ggplot2::ggplot(aes(x = iris$Sepal.Length, y= iris$Sepal.Width), data = iris) +
+  geom_point(color = ThemePark::barbie_theme_colors["light"]) +
+  geom_line(color = ThemePark::barbie_theme_colors["dark"]) +
+  labs(x = "Sepal Length",
+       y = "Sepal Width") +
+  ThemePark::theme_barbie() +
+  ggtitle("Iris Plot ") +
+  theme(plot.title = element_text(size = 12))
+
+```
+
+```{r, table-example1}
+
+descriptives <- psych::describe(pressure)
+kableExtra::kable(descriptives)
+
+```
+
+```{r, table-example2}
+#| column: screen-inset-shaded
+
+lm <- lm(DAX ~ SMI + CAC, data = EuStockMarkets)
+
+#apaTables::apa.reg.table(lm) - works for pdfs not html
+kableExtra::kable(lm[[1]])
+
+```
+
+# Discussion
+
+Purus in mollis nunc sed id semper. Etiam tempor orci eu lobortis elementum nibh tellus molestie. Habitant morbi tristique senectus et netus et malesuada fames ac. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi. Ut tortor pretium viverra suspendisse potenti. Odio aenean sed adipiscing diam. Augue neque gravida in fermentum et. Curabitur gravida arcu ac tortor dignissim. Facilisis gravida neque convallis a cras semper auctor neque vitae. Sit amet volutpat consequat mauris nunc congue nisi vitae. Mi quis hendrerit dolor magna eget est. Nam aliquam sem et tortor. Tincidunt id aliquet risus feugiat in ante. Leo vel fringilla est ullamcorper eget nulla facilisi etiam. Cursus risus at ultrices mi tempus. Suspendisse potenti nullam ac tortor. Proin sed libero enim sed faucibus turpis in eu mi. Odio pellentesque diam volutpat commodo sed. Nunc aliquet bibendum enim facilisis gravida.
+
+# References
+::: {#refs}
+:::
